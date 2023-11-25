@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "agentlebot"
+version = "0.1.0"
+description = "A Gentle AI Bot to do your things for you, with memory and functions."
+authors = ["Anshul Aggarwal <anshulaggarw4l@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
