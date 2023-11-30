@@ -11,6 +11,7 @@ mypy = "^1.7.1"
 pydantic = "^2.5.2"
 pinecone-client = "^2.2.4"
 openai = "^0.28.1"
+python-dotenv = "^1.0.0"
 
 
 [build-system]
