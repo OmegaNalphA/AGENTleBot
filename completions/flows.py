@@ -1,15 +1,18 @@
 import time
+from typing import Optional
 
 import openai
+import openai.error
 
 from completions.models import ChatCompletionCreateParams, ChatCompletionResponse
 
 
-def llm_call(completion_in: ChatCompletionCreateParams) -> ChatCompletionResponse:
+def llm_call(completion_in: ChatCompletionCreateParams) -> str:
     while True:
         try:
             response = openai.ChatCompletion.create(**completion_in.model_dump())
-            return ChatCompletionResponse(**response)
+            model_response = ChatCompletionResponse(**response)
+            return __read_response(model_response) or ""
         except openai.error.RateLimitError:
             print("Rate limit exceeded, waiting 10 seconds")
             time.sleep(10)
@@ -42,3 +45,8 @@ def llm_call(completion_in: ChatCompletionCreateParams) -> ChatCompletionRespons
             time.sleep(10)
         else:
             break
+
+
+def __read_response(completion: ChatCompletionResponse) -> Optional[str]:
+    message = completion.choices[0].message
+    return message.content
