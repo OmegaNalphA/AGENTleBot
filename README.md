@@ -8,7 +8,7 @@ This project is primarily an exercise in exploring autonomous AI agents.
 
 ### Features
 
-- **Integrated Memory:** The bot retains information and learns from its interactions, enhancing its decision-making over time using a Pinecone Vector Index.
+- **Integrated Vector Memory:** The bot retains information and learns from its interactions, enhancing its decision-making over time using a Pinecone Vector Index.
 - **Multi Chain of Thought:** This bot has both internal monologues and external dialogues, allowing it to think and speak simultaneously to better accomplish tasks.
 - **Customizable Objectives:** Users can set specific goals for the bot, directing its focus and actions accordingly.
 
